@@ -158,7 +158,6 @@ ul {
     background-size: cover;
     background-position: center;
 }
-
 .hero-content {
     width: min(100%, var(--container-width));
     margin: 0 auto;
@@ -257,43 +256,119 @@ ul {
 /* ---------- Experiences ---------- */
 
 .experiences {
+    /* On garde la carte à l'intérieur de la page */
+    width: min(90%, var(--container-width));
+    margin: var(--space-xl) auto;
+
+    /* Plus d'espace à l'intérieur */
+    padding: 6rem 4.5rem;
+
     background: var(--color-text);
     color: var(--color-white);
 
-    width: 100%;
+    /* Le changement important */
+    border-radius: 24px;
 
-    padding-left: max(5%, calc((100% - var(--container-width)) / 2));
-    padding-right: max(5%, calc((100% - var(--container-width)) / 2));
+    overflow: hidden;
+}
+
+.experiences .section-heading {
+    max-width: 900px;
+    margin-bottom: 4.5rem;
 }
 
 .experiences .section-label {
     color: #d7a979;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    letter-spacing: 0.25em;
 }
+
+.experiences .section-heading h2 {
+    color: var(--color-white);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 400;
+
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+
+/* ---------- Experience cards ---------- */
 
 .experience-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
 
-    margin-top: var(--space-lg);
+    gap: 3rem;
 }
 
 .experience-grid article {
-    padding-top: 1.5rem;
+    position: relative;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    padding-top: 2.2rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
 }
 
+
+/* ---------- Decorative icon ---------- */
+
+.experience-grid article::before {
+    display: block;
+
+    margin-bottom: 1.5rem;
+
+    color: #d7a979;
+
+    font-size: 2rem;
+    line-height: 1;
+}
+
+/* Petit-déjeuner */
+
+.experience-grid article:nth-child(1)::before {
+    content: "☕";
+}
+
+/* Transfert */
+
+.experience-grid article:nth-child(2)::before {
+    content: "◇";
+}
+
+/* Île */
+
+.experience-grid article:nth-child(3)::before {
+    content: "♒";
+}
+
+
+/* ---------- Typography ---------- */
+
 .experience-grid h3 {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
+
+    color: var(--color-white);
 
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 400;
+
+    line-height: 1.2;
 }
 
 .experience-grid p {
-    color: rgba(255, 255, 255, 0.65);
+    max-width: 360px;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 /* ---------- Gallery ---------- */
@@ -581,6 +656,32 @@ ul {
     .gallery-item {
         height: 300px;
     }
+    .experiences {
+    width: 92%;
+
+    margin: 4rem auto;
+    padding: 4rem 1.5rem;
+
+    border-radius: 18px;
+}
+
+.experiences .section-heading {
+    margin-bottom: 3rem;
+}
+
+.experiences .section-heading h2 {
+    font-size: clamp(2.6rem, 12vw, 4rem);
+}
+
+.experience-grid {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+}
+
+.experience-grid article {
+    padding-top: 1.8rem;
+}
 
     .site-footer {
         flex-direction: column;
