@@ -1,0 +1,311 @@
+/* =========================
+   Bahari House
+   Base design system
+   ========================= */
+
+:root {
+    --color-background: #f5f1e8;
+    --color-surface: #ebe4d7;
+    --color-text: #1d2823;
+    --color-muted: #6c746e;
+    --color-accent: #b67a45;
+    --color-white: #ffffff;
+
+    --container-width: 1200px;
+
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 7rem;
+
+    --radius: 4px;
+}
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background: var(--color-background);
+    color: var(--color-text);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    z-index: 10;
+
+    color: var(--color-white);
+}
+
+.navbar {
+    width: min(90%, var(--container-width));
+    height: 90px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.04em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+
+    font-size: 0.9rem;
+}
+
+.nav-links a {
+    opacity: 0.85;
+    transition: opacity 180ms ease;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+.nav-cta {
+    padding: 0.7rem 1.2rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    transition:
+        background 180ms ease,
+        color 180ms ease;
+}
+
+.nav-cta:hover {
+    background: var(--color-white);
+    color: var(--color-text);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    padding: 8rem 5% 5rem;
+
+    color: var(--color-white);
+
+    /*
+     * Temporary background.
+     * A real photograph will replace this later.
+     */
+    background:
+        linear-gradient(
+            110deg,
+            rgba(12, 28, 23, 0.92),
+            rgba(26, 49, 41, 0.65)
+        );
+}
+
+.hero-content {
+    width: min(100%, var(--container-width));
+    margin: 0 auto;
+}
+
+.hero-label,
+.section-label {
+    margin-bottom: 1rem;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+}
+
+.hero h1 {
+    max-width: 850px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    font-weight: 400;
+
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+}
+
+.hero-description {
+    max-width: 540px;
+
+    margin-top: 2rem;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 1.05rem;
+}
+
+/* ---------- Buttons ---------- */
+
+.button {
+    display: inline-block;
+
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+
+    background: var(--color-accent);
+    color: var(--color-white);
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    transition:
+        transform 180ms ease,
+        opacity 180ms ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+/* ---------- Shared sections ---------- */
+
+.about,
+.rooms,
+.experiences,
+.gallery,
+.location,
+.contact {
+    width: min(90%, var(--container-width));
+
+    margin: 0 auto;
+    padding: var(--space-xl) 0;
+}
+
+.section-heading {
+    max-width: 760px;
+
+    margin-bottom: var(--space-lg);
+}
+
+.section-heading h2,
+.contact h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.3rem, 5vw, 4.5rem);
+    font-weight: 400;
+
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+}
+
+.section-label {
+    color: var(--color-accent);
+}
+
+/* ---------- About ---------- */
+
+.about {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-lg);
+}
+
+.about-content {
+    align-self: end;
+
+    color: var(--color-muted);
+    font-size: 1.05rem;
+}
+
+.about-content p + p {
+    margin-top: 1rem;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 760px) {
+    .navbar {
+        height: 70px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 90vh;
+        padding-top: 7rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 15vw, 5rem);
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .about,
+    .rooms,
+    .experiences,
+    .gallery,
+    .location,
+    .contact {
+        padding: 5rem 0;
+    }
+}
