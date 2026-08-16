@@ -315,6 +315,135 @@ ul {
     border-top: 1px solid rgba(255, 255, 255, 0.22);
 }
 
+/* =========================
+   Experiences
+   ========================= */
+
+.experiences {
+    width: min(92%, 1200px);
+    margin: 7rem auto;
+
+    padding: 0;
+
+    background: #182620;
+    color: #ffffff;
+
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+/*
+ * Cette zone crée la vraie marge intérieure.
+ * Le texte ne peut plus toucher le bord.
+ */
+.experiences .section-heading {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+    padding:
+        0rem
+        clamp(2rem, 6vw, 5rem)
+        6.5rem;
+}
+
+.experiences .section-label {
+    margin-bottom: 1.5rem;
+
+    color: #d7a979;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+}
+
+.experiences .section-heading h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 400;
+
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+
+/* ---------- Trois colonnes ---------- */
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 3rem;
+
+    padding:
+        0
+        clamp(2rem, 6vw, 5rem)
+        6rem;
+}
+
+.experience-grid article {
+    padding-top: 2rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+
+/* ---------- Icônes provisoires ---------- */
+
+.experience-grid article::before {
+    display: block;
+
+    margin-bottom: 1.5rem;
+
+    color: #d7a979;
+
+    font-size: 1.8rem;
+}
+
+.experience-grid article:nth-child(1)::before {
+    content: "☕";
+}
+
+.experience-grid article:nth-child(2)::before {
+    content: "◇";
+}
+
+.experience-grid article:nth-child(3)::before {
+    content: "♒";
+}
+
+
+/* ---------- Texte ---------- */
+
+.experience-grid h3 {
+    margin: 0 0 1rem;
+
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.55rem;
+    font-weight: 400;
+
+    line-height: 1.25;
+}
+
+.experience-grid p {
+    margin: 0;
+
+    max-width: 340px;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
 
 /* ---------- Decorative icon ---------- */
 
@@ -421,19 +550,43 @@ ul {
     font-size: 1.05rem;
 }
 
-/* ---------- Contact ---------- */
+/* =========================
+   Contact
+   ========================= */
 
 .contact {
-    width: 100%;
+    width: min(92%, 1200px);
+    margin: 7rem auto;
 
-    padding-left: max(5%, calc((100% - var(--container-width)) / 2));
-    padding-right: max(5%, calc((100% - var(--container-width)) / 2));
+    padding: 0;
 
     background: var(--color-surface);
+
+    border-radius: 24px;
+    overflow: hidden;
 }
 
 .contact-content {
-    max-width: 720px;
+    max-width: 760px;
+
+    padding:
+        0rem
+        clamp(2rem, 6vw, 5rem);
+}
+
+.contact .section-label {
+    margin-bottom: 1.5rem;
+}
+
+.contact h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 400;
+
+    line-height: 1;
+    letter-spacing: -0.03em;
 }
 
 .contact-content > p:not(.section-label) {
@@ -442,6 +595,13 @@ ul {
     margin-top: 1.5rem;
 
     color: var(--color-muted);
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.contact .button {
+    margin-top: 2rem;
 }
 
 /* ---------- Footer ---------- */
@@ -687,6 +847,22 @@ ul {
         flex-direction: column;
         align-items: flex-start;
     }
+    .contact {
+    width: 92%;
+    margin: 4rem auto;
+
+    border-radius: 18px;
+}
+
+.contact-content {
+    padding:
+        4rem
+        1.5rem;
+}
+
+.contact h2 {
+    font-size: clamp(2.7rem, 12vw, 4rem);
+}
 
     .about,
     .rooms,
