@@ -146,16 +146,17 @@ ul {
 
     color: var(--color-white);
 
-    /*
-     * Temporary background.
-     * A real photograph will replace this later.
-     */
     background:
         linear-gradient(
-            110deg,
-            rgba(12, 28, 23, 0.92),
-            rgba(26, 49, 41, 0.65)
-        );
+            90deg,
+            rgba(10, 24, 19, 0.78) 0%,
+            rgba(10, 24, 19, 0.42) 48%,
+            rgba(10, 24, 19, 0.12) 100%
+        ),
+        url("../images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-content {
@@ -195,6 +196,105 @@ ul {
     font-size: 1.05rem;
 }
 
+/* ---------- Rooms ---------- */
+
+.rooms {
+    width: min(90%, var(--container-width));
+}
+
+.room-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.room-card {
+    background: var(--color-white);
+    overflow: hidden;
+}
+
+.room-image {
+    aspect-ratio: 4 / 5;
+
+    background-size: cover;
+    background-position: center;
+
+    transition: transform 500ms ease;
+}
+
+.room-card:nth-child(1) .room-image {
+    background-image: url("../images/rooms/standard.jpg");
+}
+
+.room-card:nth-child(2) .room-image {
+    background-image: url("../images/rooms/deluxe.jpg");
+}
+
+.room-card:nth-child(3) .room-image {
+    background-image: url("../images/rooms/ocean-suite.jpg");
+}
+
+.room-card:hover .room-image {
+    transform: scale(1.025);
+}
+
+.room-content {
+    padding: 1.6rem;
+}
+
+.room-content h3 {
+    margin-bottom: 0.6rem;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.room-content p {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+/* ---------- Experiences ---------- */
+
+.experiences {
+    background: var(--color-text);
+    color: var(--color-white);
+
+    width: 100%;
+
+    padding-left: max(5%, calc((100% - var(--container-width)) / 2));
+    padding-right: max(5%, calc((100% - var(--container-width)) / 2));
+}
+
+.experiences .section-label {
+    color: #d7a979;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+
+    margin-top: var(--space-lg);
+}
+
+.experience-grid article {
+    padding-top: 1.5rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.experience-grid h3 {
+    margin-bottom: 0.8rem;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.experience-grid p {
+    color: rgba(255, 255, 255, 0.65);
+}
 /* ---------- Buttons ---------- */
 
 .button {
@@ -293,6 +393,13 @@ ul {
 
     .hero h1 {
         font-size: clamp(3rem, 15vw, 5rem);
+    }
+    .room-grid {
+        grid-template-columns: 1fr;
+    }
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .about {
